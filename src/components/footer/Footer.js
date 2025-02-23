@@ -3,6 +3,7 @@ import {ImFacebook} from 'react-icons/im'
 import {BsInstagram} from 'react-icons/bs'
 import {FaTwitter} from 'react-icons/fa'
 import './footer.css'
+import { socials } from '../../models'
 
 const Footer = () => {
   return (
@@ -34,25 +35,18 @@ const Footer = () => {
 
 			<div className="footer__socials">
 				<a
-					href="https://www.facebook.com/profile.php?id=100006140478304"
+					href={socials.facebook}
 					target="_blank"
 					rel="noreferrer"
 				>
 					<ImFacebook className="footer-icons" />
 				</a>
 				<a
-					href="https://www.instagram.com/beki_tesh"
+					href={socials.instagram}
 					target="_blank"
 					rel="noreferrer"
 				>
 					<BsInstagram className="footer-icons" />
-				</a>
-				<a
-					href="https://twitter.com/BereketTes77455"
-					target="_blank"
-					rel="noreferrer"
-				>
-					<FaTwitter className="footer-icons" />
 				</a>
 			</div>
 

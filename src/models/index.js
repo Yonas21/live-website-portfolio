@@ -81,6 +81,8 @@ export const socials = {
 	linkedin: "https://www.linkedin.com/in/yonasalem21/",
 	github: "https://github.com/Yonas21",
 	upwork: "https://www.upwork.com/freelancers/yonasalem2",
+	facebook: "https://web.facebook.com/Yon.Alem.21/",
+	instagram: "https://www.instagram.com/its_yon_21/",
 };
 
 
