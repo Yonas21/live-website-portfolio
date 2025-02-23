@@ -1,20 +1,19 @@
 import React from 'react'
 import {ImFacebook} from 'react-icons/im'
 import {BsInstagram} from 'react-icons/bs'
-import {FaTwitter} from 'react-icons/fa'
 import './footer.css'
 import { socials } from '../../models'
 
 const Footer = () => {
   return (
 		<footer id="footer">
-			<a href="#" className="footer__logo">
+			<a href={socials.github} className="footer__logo">
 				Yon
 			</a>
 
 			<ul className="permalinks">
 				<li>
-					<a href="#">Home</a>
+					<a href="/">Home</a>
 				</li>
 				<li>
 					<a href="#about">About</a>
