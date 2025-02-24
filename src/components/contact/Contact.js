@@ -53,7 +53,7 @@ const Contact = () => {
             <SiGmail className="contact-icon" />
             <h4>Email</h4>
             <h5>{contact.email}</h5>
-            <a href="mailto:bereketteshome685@gmail.com" target="_blank">
+            <a href={`mailto:${contact.email}`} target="_blank">
               send a message
             </a>
           </article>
@@ -62,7 +62,7 @@ const Contact = () => {
             <FaTelegramPlane className="contact-icon" />
             <h4>Telegram</h4>
             <h5>{contact.telegram}</h5>
-            <a href="https://t.me/Medication12" target="_blank">
+            <a href={`{contact.telegram}`} target="_blank">
               send a message
             </a>
           </article>
