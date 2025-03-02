@@ -1,9 +1,6 @@
-import React from 'react'
-import {ImFacebook} from 'react-icons/im'
-import {BsInstagram} from 'react-icons/bs'
 import './footer.css'
 import { contact, socials } from '../../models'
-import { FaLinkedin, FaWhatsapp } from 'react-icons/fa'
+import { FaLink } from 'react-icons/fa';
 
 const Footer = () => {
   return (
@@ -34,7 +31,7 @@ const Footer = () => {
 			</ul>
 
 			<div className="footer__socials">
-				<a
+				{/* <a
 					href={socials.facebook}
 					target="_blank"
 					rel="noreferrer"
@@ -62,6 +59,13 @@ const Footer = () => {
 					rel="noreferrer"
 				>
 					<FaLinkedin className="footer-icons" />
+				</a> */}
+				<a
+					href={contact.linktree}
+					target="_blank"
+					rel="noreferrer"
+				>
+					<FaLink className="footer-icons" />
 				</a>
 			</div>
 
