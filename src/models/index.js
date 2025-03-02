@@ -1,5 +1,5 @@
 import me from "../assets/me.jpg";
-import me3 from "../assets/office.jpg";
+import me3 from "../assets/office.jpeg";
 import IMG1 from "../assets/RealGaming.png";
 import IMG2 from "../assets/affiliate.png";
 import IMG3 from "../assets/Dubeale.png";
@@ -73,7 +73,8 @@ export const skills = {
 
 export const contact = {
 	email: "yonalem21@gmail.com",
-	telegram: "@Yon_21",
+	tgusername: "@Yon_21",
+	telegram: "https://t.me/Yon_21",
 	phone: "+251936972697",
 };
 

@@ -14,15 +14,23 @@
     place-items: center;
 }
 
-.about__me-img{
+.about__me-img {
     border-radius: 2rem;
     overflow: hidden;
     transform: rotate(0deg);
     transition: var(--transition);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-.about__me-img img{
-    height: 350px;
-    width: 350px;
+
+.about__me-img img {
+    height: 100%;
+    /* Make sure it takes full height of the container */
+    width: 100%;
+    /* Ensure it fills the container */
+    object-fit: contain;
+    /* Ensures the full image is visible without cropping */
 }
 
 .about__me-img:hover{
