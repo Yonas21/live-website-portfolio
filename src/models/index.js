@@ -75,6 +75,8 @@ export const contact = {
 	email: "yonalem21@gmail.com",
 	tgusername: "@Yon_21",
 	telegram: "https://t.me/Yon_21",
+	whatsapp_number:"+251936972697",
+	whatsapp: "https://wa.me/251936972697",
 	phone: "+251936972697",
 };
 

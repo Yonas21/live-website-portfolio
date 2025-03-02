@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { SiGmail } from "react-icons/si";
-import { FaTelegramPlane } from "react-icons/fa";
+import { FaTelegramPlane, FaWhatsapp } from "react-icons/fa";
 import { MdCall } from "react-icons/md";
 import "./contact.css";
 import emailjs from "emailjs-com";
@@ -59,6 +59,14 @@ const Contact = () => {
           </article>
 
           <article className="contact__option">
+            <FaWhatsapp className="contact-icon" />
+            <h4>Whatsapp</h4>
+            <h5>{contact.whatsapp_number}</h5>
+            <a href={`${contact.whatsapp}`} target="_blank" rel="noreferrer">
+              send a message
+            </a>
+          </article>
+          <article className="contact__option">
             <FaTelegramPlane className="contact-icon" />
             <h4>Telegram</h4>
             <h5>{contact.tgusername}</h5>
@@ -66,6 +74,7 @@ const Contact = () => {
               send a message
             </a>
           </article>
+          
 
           <article className="contact__option">
             <MdCall className="contact-icon" />
