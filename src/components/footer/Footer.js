@@ -2,7 +2,8 @@ import React from 'react'
 import {ImFacebook} from 'react-icons/im'
 import {BsInstagram} from 'react-icons/bs'
 import './footer.css'
-import { socials } from '../../models'
+import { contact, socials } from '../../models'
+import { FaLinkedin, FaWhatsapp } from 'react-icons/fa'
 
 const Footer = () => {
   return (
@@ -46,6 +47,21 @@ const Footer = () => {
 					rel="noreferrer"
 				>
 					<BsInstagram className="footer-icons" />
+				</a>
+				<a
+					href={contact.whatsapp}
+					target="_blank"
+					rel="noreferrer"
+				>
+					<FaWhatsapp className="footer-icons" />
+				</a>
+				
+				<a
+					href={socials.linkedin}
+					target="_blank"
+					rel="noreferrer"
+				>
+					<FaLinkedin className="footer-icons" />
 				</a>
 			</div>
 
