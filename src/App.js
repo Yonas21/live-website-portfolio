@@ -21,6 +21,10 @@ export default function App() {
 					Hire
 				</title>
 				<meta
+					name="google-site-verification"
+					content="jrRx6dbQoAs9sJ4PakCKSlj0K5iSI-HrCRDu_qcZtbM"
+				/>
+				<meta
 					name="description"
 					content="Hire Yonas Alem - Professional React and Fullstack Developer based in Addis Ababa, Ethiopia. Specializing in React, Node.js, PHP, Golang, and AWS. Available for remote work and outsourcing projects."
 				/>
@@ -64,7 +68,15 @@ export default function App() {
 							"https://github.com/Yonas21",
 							"https://www.upwork.com/freelancers/~01682245c0c04d20d0",
 						],
-						skills: ["React","React-Native", "Node.js", "AWS", "PHP", "Python", "Golang"],
+						skills: [
+							"React",
+							"React-Native",
+							"Node.js",
+							"AWS",
+							"PHP",
+							"Python",
+							"Golang",
+						],
 						availableForHire: true,
 						location: {
 							"@type": "Addis Ababa, Ethiopia",
