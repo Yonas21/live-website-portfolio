@@ -15,7 +15,7 @@ import CaseStudies from './components/CaseStudies';
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col pb-16 md:pb-0">
+    <main id="content" className="flex min-h-screen flex-col pb-16 md:pb-0">
       <ScrollProgress />
       <Navbar />
       <Hero />
