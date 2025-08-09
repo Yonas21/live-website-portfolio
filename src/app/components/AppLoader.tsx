@@ -32,8 +32,9 @@ const AppLoader: React.FC = () => {
     if (mountedRef.current) return; // run once
     mountedRef.current = true;
 
-    const requestedMs = Number(process.env.NEXT_PUBLIC_LOADER_MS) || 25000; // default 1.5s
-    const hardTimeout = setTimeout(() => setVisible(false), requestedMs);
+    const alreadySeen = typeof window !== 'undefined' && sessionStorage.getItem('seenLoader') === '1';
+    const requestedMs = Number(process.env.NEXT_PUBLIC_LOADER_MS) || 900; // default 0.9s
+    const hardTimeout = setTimeout(() => setVisible(false), alreadySeen ? 0 : requestedMs);
 
     const start = Date.now();
 
@@ -58,7 +59,10 @@ const AppLoader: React.FC = () => {
       typeNext();
     }, 18 + Math.random() * 30);
 
-    const onHydrated = () => setVisible(false);
+    const onHydrated = () => {
+      setVisible(false);
+      try { sessionStorage.setItem('seenLoader', '1'); } catch {}
+    };
     // If the document is already interactive, hide quickly; otherwise, rely on timeout.
     if (document.readyState === "interactive" || document.readyState === "complete") {
       const elapsed = Date.now() - start;
@@ -84,14 +88,14 @@ const AppLoader: React.FC = () => {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.4 }}
-          className="fixed inset-0 z-[70] grid place-items-center bg-gray-950"
+          className="fixed inset-0 z-[70] grid place-items-center bg-white dark:bg-gray-950"
         >
           <motion.div
             initial={{ scale: 0.98, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.98, opacity: 0 }}
             transition={{ duration: 0.4 }}
-            className="w-[92%] max-w-xl rounded-xl border border-gray-800 bg-black/60 backdrop-blur px-4 py-5 shadow-2xl"
+            className="w-[92%] max-w-xl rounded-xl border border-gray-300 dark:border-gray-800 bg-white/80 dark:bg-black/60 backdrop-blur px-4 py-5 shadow-2xl"
             aria-label="Loading"
           >
             <div className="flex items-center gap-2 pb-3">
@@ -100,7 +104,7 @@ const AppLoader: React.FC = () => {
               <span className="h-2.5 w-2.5 rounded-full bg-green-500" />
               <span className="ml-auto text-xs text-gray-400">booting portfolio</span>
             </div>
-            <div className="h-48 overflow-hidden rounded-md border border-gray-800 bg-gray-950 p-3 font-mono text-[12.5px] leading-relaxed text-gray-300">
+            <div className="h-48 overflow-hidden rounded-md border border-gray-300 dark:border-gray-800 bg-gray-50 dark:bg-gray-950 p-3 font-mono text-[12.5px] leading-relaxed text-gray-700 dark:text-gray-300">
               {codeLines.slice(0, currentLine).map((l, i) => (
                 <div key={i} className="whitespace-pre text-gray-400">{l}</div>
               ))}

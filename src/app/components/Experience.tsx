@@ -39,25 +39,25 @@ const Experience = () => {
   ];
 
   return (
-    <section id="experience" className="bg-gray-950 text-white py-20 sm:py-24">
+    <section id="experience" className="bg-white text-gray-900 dark:bg-gray-950 dark:text-white py-20 sm:py-24 scroll-mt-24">
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-4xl font-bold text-center mb-16">Experience</h2>
           <div className="space-y-4 md:space-y-6">
             {roles.map((r, idx) => (
-              <div key={idx} className="bg-gray-900 rounded-xl border border-gray-800 p-5 md:p-6">
+              <div key={idx} className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 p-5 md:p-6 shadow-sm hover:shadow-md transition-shadow">
                 <div className="flex flex-col md:flex-row md:items-baseline md:justify-between gap-1 md:gap-2">
                   <h3 className="text-lg md:text-xl font-semibold"><span className="text-brand-300">{r.role}</span> · {r.company}</h3>
-                  <span className="text-sm text-gray-400">{r.period}</span>
+                  <span className="text-sm text-gray-500 dark:text-gray-400">{r.period}</span>
                 </div>
-                <ul className="mt-3 md:mt-4 space-y-2 list-disc list-inside text-gray-300">
+                <ul className="mt-3 md:mt-4 space-y-2 list-disc list-inside text-gray-700 dark:text-gray-300">
                   {r.bullets.map((b, bi) => (
                     <li key={bi}>{b}</li>
                   ))}
                 </ul>
                 <div className="mt-3 md:mt-4 flex flex-wrap gap-2">
                   {r.stack.map((tech, ti) => (
-                    <span key={ti} className="bg-gray-800 text-gray-200 text-xs font-medium px-3 py-1 rounded-md border border-gray-700">{tech}</span>
+                    <span key={ti} className="bg-brand-50 text-brand-700 dark:bg-gray-800 dark:text-gray-200 text-xs font-medium px-3 py-1 rounded-md border border-brand-200 dark:border-gray-700">{tech}</span>
                   ))}
                 </div>
               </div>

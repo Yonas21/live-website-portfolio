@@ -30,19 +30,19 @@ const Metrics = () => {
   }, []);
 
   return (
-    <section className="bg-gray-950 text-white py-16">
+    <section className="bg-white text-gray-900 dark:bg-gray-950 dark:text-white py-16">
       <div className="container mx-auto px-4">
         <div ref={containerRef} className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
           {items.map((m, i) => (
             <motion.div
               key={i}
               data-metric
-              className="bg-gray-900 border border-gray-800 rounded-xl p-6 text-center opacity-0 translate-y-2 transition-all duration-700"
+              className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-xl p-6 text-center opacity-0 translate-y-2 transition-all duration-700 shadow-sm hover:shadow-md"
               style={{ transitionDelay: `${i * 120}ms` }}
               whileHover={{ scale: 1.02 }}
             >
               <div className="text-3xl font-bold text-brand-300">{m.value}</div>
-              <div className="text-sm text-gray-400 mt-1">{m.label}</div>
+              <div className="text-sm text-gray-500 dark:text-gray-400 mt-1">{m.label}</div>
             </motion.div>
           ))}
         </div>

@@ -12,7 +12,7 @@ const Logos = () => {
   ];
 
   return (
-    <section aria-label="Trusted stack" className="bg-gray-950 py-12 overflow-hidden">
+    <section aria-label="Trusted stack" className="bg-white dark:bg-gray-950 py-12 overflow-hidden scroll-mt-24" id="logos">
       <div className="container mx-auto px-4">
         <div className="relative">
           <motion.div
@@ -23,7 +23,7 @@ const Logos = () => {
           >
             {[...logos, ...logos].map((l, i) => (
               <div key={`${l.name}-${i}`} className="flex justify-center min-w-[140px]">
-                <img src={l.src} alt={l.name} className="h-8 w-auto grayscale hover:grayscale-0 transition" />
+                <img src={l.src} alt={l.name} className="h-8 w-auto grayscale dark:invert-0 hover:grayscale-0 transition" />
               </div>
             ))}
           </motion.div>

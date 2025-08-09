@@ -22,14 +22,14 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="bg-gray-950 text-white py-20 sm:py-24">
+    <section id="projects" className="bg-white text-gray-900 dark:bg-gray-950 dark:text-white py-20 sm:py-24 scroll-mt-24">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold text-center mb-16">Key Projects</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {projects.map((project, index) => (
             <motion.div
               key={index}
-              className="group bg-gray-900 rounded-xl border border-gray-800 overflow-hidden"
+              className="group bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 overflow-hidden shadow-sm hover:shadow-md transition-shadow"
               initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
@@ -38,13 +38,13 @@ const Projects = () => {
             >
               <div className="p-6">
                 <h3 className="text-xl font-semibold mb-3 text-brand-300">{project.title}</h3>
-                <p className="text-gray-300/90 mb-5 max-h-32 overflow-hidden">{project.description}</p>
+                <p className="text-gray-700/90 dark:text-gray-300/90 mb-5 max-h-32 overflow-hidden">{project.description}</p>
                 <div className="flex flex-wrap gap-2">
                   {project.technologies.map((tech, i) => (
-                    <span key={i} className="bg-gray-800 text-gray-200 text-xs font-medium px-3 py-1 rounded-md border border-gray-700">{tech}</span>
+                    <span key={i} className="bg-brand-50 text-brand-700 dark:bg-gray-800 dark:text-gray-200 text-xs font-medium px-3 py-1 rounded-md border border-brand-200 dark:border-gray-700">{tech}</span>
                   ))}
                 </div>
-                <div className="mt-6 text-sm text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity">Impact: performance at scale, cost efficiency, reliability.</div>
+                <div className="mt-6 text-sm text-gray-500 dark:text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity">Impact: performance at scale, cost efficiency, reliability.</div>
               </div>
             </motion.div>
           ))}
