@@ -41,6 +41,19 @@ export const metadata: Metadata = {
   },
 };
 
+// Basic Person schema for SEO
+const personJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Yonas Alem',
+  url: 'https://yonasalem.dev',
+  jobTitle: 'Senior Software Engineer',
+  sameAs: [
+    'https://www.linkedin.com/in/yonasalem21',
+    'https://github.com/Yonas21',
+  ],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -48,9 +61,14 @@ export default function RootLayout({
 }>) {
   const AppLoader = dynamic(() => import("./components/AppLoader"), { ssr: false });
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="dark scroll-smooth">
       <body className={`${inter.variable} ${sora.variable} font-sans antialiased`}>
         <ThemeProvider>
+          <script
+            type="application/ld+json"
+            suppressHydrationWarning
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+          />
           <AppLoader />
           {children}
         </ThemeProvider>
