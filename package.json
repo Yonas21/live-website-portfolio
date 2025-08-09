@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "export": "next export",
+    "deploy": "npm run build && npx firebase-tools deploy --only hosting"
   },
   "dependencies": {
     "framer-motion": "^12.23.12",

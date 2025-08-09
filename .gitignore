@@ -4,3 +4,5 @@
 /.local
 /.vercel
 .DS_Store
+/firebase.js
+/out
