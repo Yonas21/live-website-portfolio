@@ -9,7 +9,7 @@ const Navbar = () => {
   const { theme, toggle } = useTheme();
 
   return (
-    <nav className="hidden md:block fixed top-0 left-0 right-0 z-50 backdrop-blur border-b bg-white/80 border-gray-200/70 shadow-sm dark:bg-black/40 dark:border-gray-800/60">
+    <nav className="hidden md:block fixed top-0 left-0 right-0 z-50 backdrop-blur border-b bg-white/80 border-gray-200/70 shadow-sm dark:bg-gray-950/90 dark:border-gray-900/80">
       <div className="container mx-auto px-6 py-4 flex justify-between items-center">
         <a href="#top" className="text-2xl font-semibold tracking-tight text-gray-900 dark:text-white hover:text-brand-300 transition-colors font-display">Yonas Alem</a>
         {/* Desktop nav */}

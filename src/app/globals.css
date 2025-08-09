@@ -17,6 +17,21 @@ html, body {
   background-image: radial-gradient(ellipse at top, rgba(59,130,246,0.35), transparent 60%), radial-gradient(ellipse at bottom, rgba(147,51,234,0.25), transparent 60%);
 }
 
+/* Subtle, professional hero background surface */
+.hero-surface {
+  /* layered: brand-tinted glow + faint grid */
+  background-image:
+    radial-gradient(1100px 520px at 50% -120px, rgba(59,130,246,0.10), transparent 70%),
+    repeating-linear-gradient(0deg, rgba(17,24,39,0.06), rgba(17,24,39,0.06) 1px, transparent 1px, transparent 24px),
+    repeating-linear-gradient(90deg, rgba(17,24,39,0.06), rgba(17,24,39,0.06) 1px, transparent 1px, transparent 24px);
+}
+
+.dark .hero-surface {
+  /* Match About section background in dark mode */
+  background-image: none !important;
+  background-color: rgb(3 7 18); /* tailwind gray-950 */
+}
+
 @layer utilities {
   .text-balance { text-wrap: balance; }
   .sr-only {
@@ -39,6 +54,19 @@ html, body {
     overflow: visible;
     clip: auto;
     white-space: normal;
+  }
+  /* Multi-line truncation utilities */
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .line-clamp-4 {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 }
 

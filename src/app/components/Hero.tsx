@@ -6,11 +6,7 @@ import { SiNextdotjs, SiTypescript, SiTailwindcss, SiFirebase, SiGithub, SiLinke
 
 const Hero = () => {
   return (
-    <section id="top" className="relative isolate text-gray-900 dark:text-white py-28 md:py-36 overflow-hidden bg-hero-gradient">
-      {/* Ambient background accents */}
-      <div className="pointer-events-none absolute -top-20 left-1/2 h-[36rem] w-[36rem] -translate-x-1/2 rounded-full bg-brand-500/20 blur-3xl filter" />
-      <div className="pointer-events-none absolute -bottom-24 -left-20 h-[28rem] w-[28rem] rounded-full bg-purple-500/20 blur-3xl filter" />
-      <div className="pointer-events-none absolute -bottom-40 -right-16 h-[24rem] w-[24rem] rounded-full bg-blue-300/10 blur-3xl filter" />
+    <section id="top" className="relative isolate text-gray-900 dark:text-white py-28 md:py-36 overflow-hidden hero-surface">
 
       <div className="container mx-auto px-6">
         <motion.div
@@ -42,7 +38,7 @@ const Hero = () => {
             </motion.p>
 
             <motion.p className="mt-5 max-w-xl text-base sm:text-lg text-gray-700/90 dark:text-gray-300/90" variants={fadeInUp}>
-              I design and build fast, resilient products that scale. Think 40% faster APIs, five‑nines reliability, and meaningful cloud cost savings.
+              I ship performant, resilient software—faster APIs, rock‑solid reliability, and lower cloud spend.
             </motion.p>
 
             <motion.div className="mt-7 flex flex-wrap items-center gap-3 sm:gap-4" variants={fadeInUp}>

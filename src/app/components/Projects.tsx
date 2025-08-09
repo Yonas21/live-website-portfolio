@@ -8,16 +8,19 @@ const Projects = () => {
       title: 'Real Gaming Poker Platform',
       description: 'Architected and developed an end-to-end real-time multiplayer poker system supporting multiple game variants. Optimized database schema and queries for transaction accuracy at scale, ensuring zero financial discrepancies. Reduced monthly server costs from $30,000 to $8,000 through strategic AWS architecture optimization and resource management.',
       technologies: ['React', 'Material-UI', 'gRPC', 'PHP', 'MySQL', 'Redis', 'AWS', 'Docker', 'DataDog'],
+      impact: 'Cut infra spend 73% (\$30k→\$8k/mo); ensured zero financial discrepancies; real-time play at scale.'
     },
     {
       title: 'Government Constituent Platform',
       description: 'Developed a scalable RESTful API backend processing 1000+ daily complaint submissions with automated approval workflows. Integrated Azure Cognitive Services for voicemail-to-text transcription and intelligent content classification. Implemented an automated citizen communication system with personalized greetings and response templates, improving engagement by 40%.',
       technologies: ['Python', 'FastAPI', 'SQLAlchemy', 'MySQL', 'Azure AI', 'ClickUp Integration'],
+      impact: 'Scaled to 1k+ daily submissions; +40% citizen engagement with automated, personalized outreach.'
     },
     {
       title: 'Upplai - AI Resume Platform',
       description: 'Integrated OpenAI GPT models to generate personalized resumes, cover letters, and ATS optimization recommendations. Developed a responsive Vue.js frontend with real-time resume scoring and live document preview functionality. Optimized mobile user experience, reducing page load times by 60% through asset optimization and lazy loading.',
       technologies: ['Vue.js', 'OpenAI API', 'Axios', 'Tailwind CSS', 'Responsive Design'],
+      impact: '60% faster page loads; higher conversion via ATS scoring and live preview UX.'
     },
   ];
 
@@ -36,15 +39,17 @@ const Projects = () => {
               transition={{ duration: 0.5, delay: index * 0.08 }}
               whileHover={{ y: -4 }}
             >
-              <div className="p-6">
+              <div className="p-6 flex flex-col">
                 <h3 className="text-xl font-semibold mb-3 text-brand-300">{project.title}</h3>
-                <p className="text-gray-700/90 dark:text-gray-300/90 mb-5 max-h-32 overflow-hidden">{project.description}</p>
+                <p className="text-gray-700/90 dark:text-gray-300/90 mb-5">{project.description}</p>
                 <div className="flex flex-wrap gap-2">
                   {project.technologies.map((tech, i) => (
                     <span key={i} className="bg-brand-50 text-brand-700 dark:bg-gray-800 dark:text-gray-200 text-xs font-medium px-3 py-1 rounded-md border border-brand-200 dark:border-gray-700">{tech}</span>
                   ))}
                 </div>
-                <div className="mt-6 text-sm text-gray-500 dark:text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity">Impact: performance at scale, cost efficiency, reliability.</div>
+                {project.impact && (
+                  <div className="mt-6 text-sm text-gray-500 dark:text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity">Impact: {project.impact}</div>
+                )}
               </div>
             </motion.div>
           ))}
