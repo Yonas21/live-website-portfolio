@@ -16,18 +16,15 @@ export default function ThemeProvider({ children }: { children: React.ReactNode 
 
   useEffect(() => {
     const saved = (typeof window !== 'undefined' && localStorage.getItem('theme')) as Theme | null;
-    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const initial = saved ?? (prefersDark ? 'dark' : 'dark'); // default to dark
+    const prefersDark = typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const initial = saved ?? (prefersDark ? 'dark' : 'dark');
     setThemeState(initial);
   }, []);
 
   useEffect(() => {
     const root = document.documentElement;
-    if (theme === 'dark') {
-      root.classList.add('dark');
-    } else {
-      root.classList.remove('dark');
-    }
+    const isDark = theme === 'dark';
+    root.classList.toggle('dark', isDark);
     localStorage.setItem('theme', theme);
   }, [theme]);
 
@@ -38,11 +35,7 @@ export default function ThemeProvider({ children }: { children: React.ReactNode 
   }), [theme]);
 
   return (
-    <ThemeContext.Provider value={value}>
-      <div className={theme === 'dark' ? 'bg-gray-950 text-white' : 'bg-white text-gray-900'}>
-        {children}
-      </div>
-    </ThemeContext.Provider>
+    <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
   );
 }
 
