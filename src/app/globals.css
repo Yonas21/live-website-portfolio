@@ -3,7 +3,18 @@
 @tailwind utilities;
 
 html, body {
+  /* Light mode defaults */
+  @apply bg-gradient-to-b from-white to-gray-50 text-gray-900;
+}
+
+/* Dark mode overrides when `.dark` class is present on <html> */
+.dark body {
   @apply bg-gray-950 text-white;
+}
+
+/* Darken the hero background gradient in dark mode for richness */
+.dark .bg-hero-gradient {
+  background-image: radial-gradient(ellipse at top, rgba(59,130,246,0.35), transparent 60%), radial-gradient(ellipse at bottom, rgba(147,51,234,0.25), transparent 60%);
 }
 
 @layer utilities {
@@ -26,7 +37,10 @@ html, body {
   width: 8px;
   height: 1.2em;
   margin-left: 2px;
-  background: rgba(255,255,255,0.9);
+  /* Light mode caret */
+  background: rgba(0,0,0,0.85);
   animation: blink 1s steps(2, start) infinite;
 }
+/* Dark mode caret */
+.dark .caret { background: rgba(255,255,255,0.9); }
 @keyframes blink { to { visibility: hidden; } }
