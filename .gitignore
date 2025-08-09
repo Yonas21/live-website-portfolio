@@ -4,5 +4,9 @@
 /.local
 /.vercel
 .DS_Store
-/firebase.js
+.firebaserc
+.gitignore
+.next
+firebase.json
+firebase.js
 /out
