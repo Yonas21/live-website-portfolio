@@ -2,7 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { fadeInUp, staggerContainer } from './motion';
-import { SiNextdotjs, SiTypescript, SiTailwindcss, SiFirebase, SiGithub, SiLinkedin } from 'react-icons/si';
+import { SiNextdotjs, SiTypescript, SiTailwindcss, SiFirebase, SiGithub, SiLinkedin, SiAmazon, SiDocker } from 'react-icons/si';
 
 const Hero = () => {
   return (
@@ -22,7 +22,7 @@ const Hero = () => {
               className="inline-flex items-center gap-2 rounded-full border border-brand-200/60 bg-white/60 px-3 py-1.5 text-sm font-medium text-brand-700 shadow-sm ring-1 ring-black/5 backdrop-blur-md dark:border-white/10 dark:bg-white/5 dark:text-brand-200"
             >
               <span className="inline-block h-2.5 w-2.5 rounded-full bg-emerald-500 animate-pulse" />
-              Available for freelance & full‑time
+              Available for remote opportunities worldwide
             </motion.div>
 
             <motion.h1
@@ -30,7 +30,7 @@ const Hero = () => {
               variants={fadeInUp}
               aria-label="Yonas Alem, Senior Software Engineer"
             >
-              Hi, I’m <span className="bg-gradient-to-r from-brand-500 via-purple-500 to-brand-500 bg-clip-text text-transparent">Yonas Alem</span>
+              Hi, I'm <span className="bg-gradient-to-r from-brand-500 via-purple-500 to-brand-500 bg-clip-text text-transparent">Yonas Alem</span>
             </motion.h1>
 
             <motion.p className="mt-4 text-lg sm:text-xl md:text-2xl text-gray-700/90 dark:text-gray-300/90 font-semibold" variants={fadeInUp}>
@@ -38,7 +38,7 @@ const Hero = () => {
             </motion.p>
 
             <motion.p className="mt-5 max-w-xl text-base sm:text-lg text-gray-700/90 dark:text-gray-300/90" variants={fadeInUp}>
-              I ship performant, resilient software—faster APIs, rock‑solid reliability, and lower cloud spend.
+              I build scalable, high-performance applications that drive business growth. Specialized in cloud architecture, microservices, and full-stack development with a proven track record of reducing costs by 73% and improving performance by 40%.
             </motion.p>
 
             <motion.div className="mt-7 flex flex-wrap items-center gap-3 sm:gap-4" variants={fadeInUp}>
@@ -47,7 +47,7 @@ const Hero = () => {
                 className="inline-flex items-center justify-center gap-2 bg-brand-600 hover:bg-brand-500 text-white font-semibold py-3 px-5 sm:px-6 rounded-lg transition-colors shadow-lg shadow-brand-600/25 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400"
                 aria-label="Email Yonas"
               >
-                Contact Me
+                Let's Connect
               </a>
               <a
                 href="/Yonas_Alem_Resume.pdf"
@@ -56,14 +56,14 @@ const Hero = () => {
                 className="inline-flex items-center justify-center gap-2 bg-white hover:bg-gray-50 text-gray-900 dark:bg-white/10 dark:hover:bg-white/15 dark:text-white font-semibold py-3 px-5 sm:px-6 rounded-lg transition-colors border border-gray-200 dark:border-white/15 shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400"
                 aria-label="View resume PDF"
               >
-                View Résumé
+                Download Résumé
               </a>
               <a
                 href="#projects"
                 className="inline-flex items-center justify-center gap-2 text-brand-700 hover:text-brand-800 dark:text-brand-300 dark:hover:text-brand-200 font-medium underline underline-offset-4"
                 aria-label="Skip to Projects"
               >
-                View Projects
+                View My Work →
               </a>
             </motion.div>
 
@@ -87,6 +87,22 @@ const Hero = () => {
                 <SiLinkedin />
               </a>
               <span className="ml-1 text-sm text-gray-500 dark:text-gray-400">#OpenToWork</span>
+            </motion.div>
+
+            {/* Quick stats */}
+            <motion.div className="mt-8 flex items-center gap-6 text-sm text-gray-600 dark:text-gray-400" variants={fadeInUp}>
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
+                <span>5+ years experience</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                <span>40+ projects delivered</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
+                <span>Remote-first</span>
+              </div>
             </motion.div>
           </div>
 
@@ -113,12 +129,12 @@ const Hero = () => {
               <span className="text-gray-700 dark:text-gray-200">TypeScript</span>
             </div>
             <div className="absolute top-1/2 -left-6 hidden md:flex -translate-y-1/2 items-center gap-2 rounded-full bg-white/80 px-3 py-2 text-sm font-medium shadow ring-1 ring-black/5 backdrop-blur dark:bg-white/10">
-              <SiTailwindcss className="text-sky-500" />
-              <span className="text-gray-700 dark:text-gray-200">Tailwind</span>
+              <SiAmazon className="text-orange-500" />
+              <span className="text-gray-700 dark:text-gray-200">AWS</span>
             </div>
             <div className="absolute top-1/2 -right-6 hidden md:flex -translate-y-1/2 items-center gap-2 rounded-full bg-white/80 px-3 py-2 text-sm font-medium shadow ring-1 ring-black/5 backdrop-blur dark:bg-white/10">
-              <SiFirebase className="text-amber-500" />
-              <span className="text-gray-700 dark:text-gray-200">Firebase</span>
+              <SiDocker className="text-blue-500" />
+              <span className="text-gray-700 dark:text-gray-200">Docker</span>
             </div>
           </motion.div>
         </motion.div>

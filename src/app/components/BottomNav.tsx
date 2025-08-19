@@ -1,18 +1,18 @@
 "use client";
 import React, { useMemo } from 'react';
-import { FiHome, FiUser, FiGrid, FiMessageSquare, FiBookOpen } from 'react-icons/fi';
+import { FiHome, FiUser, FiGrid, FiMessageSquare, FiBookOpen, FiFileText } from 'react-icons/fi';
 import { useActiveSection } from './useActiveSection';
 
 const items = [
   { href: '#top', label: 'Home', icon: (active: boolean) => <FiHome size={22} className={active ? 'scale-110' : ''} /> },
   { href: '#about', label: 'About', icon: (active: boolean) => <FiUser size={22} className={active ? 'scale-110' : ''} /> },
   { href: '#projects', label: 'Projects', icon: (active: boolean) => <FiGrid size={22} className={active ? 'scale-110' : ''} /> },
-  { href: '#how-i-work', label: 'How I Work', icon: (active: boolean) => <FiBookOpen size={22} className={active ? 'scale-110' : ''} /> },
+  { href: '#blog', label: 'Blog', icon: (active: boolean) => <FiFileText size={22} className={active ? 'scale-110' : ''} /> },
   { href: '#contact', label: 'Contact', icon: (active: boolean) => <FiMessageSquare size={22} className={active ? 'scale-110' : ''} /> },
 ];
 
 export default function BottomNav() {
-  const ids = useMemo(() => ['top', 'about', 'experience', 'projects', 'how-i-work', 'contact'], []);
+  const ids = useMemo(() => ['top', 'about', 'experience', 'projects', 'case-studies', 'blog', 'how-i-work', 'contact'], []);
   const active = useActiveSection(ids, 180);
 
   const smoothScrollTo = (id: string) => {

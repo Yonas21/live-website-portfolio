@@ -17,9 +17,10 @@ const Navbar = () => {
           <li><a href="#about" className="text-sm text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-colors">About</a></li>
           <li><a href="#experience" className="text-sm text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-colors">Experience</a></li>
           <li><a href="#projects" className="text-sm text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-colors">Projects</a></li>
-          <li><a href="#contact" className="text-sm text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-colors">Contact</a></li>
-          <li><a href="#how-i-work" className="text-sm text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-colors">How I Work</a></li>
           <li><a href="#case-studies" className="text-sm text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-colors">Case Studies</a></li>
+          <li><a href="#blog" className="text-sm text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-colors">Blog</a></li>
+          <li><a href="#how-i-work" className="text-sm text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-colors">How I Work</a></li>
+          <li><a href="#contact" className="text-sm text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-colors">Contact</a></li>
           <li>
             <a href="/Yonas_Alem_Resume.pdf" className="text-sm font-medium text-black bg-brand-400 hover:bg-brand-300 px-4 py-2 rounded-md transition-colors" download>
               Download Resume

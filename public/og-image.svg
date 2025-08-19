@@ -1,0 +1,65 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1f2937;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#111827;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="text" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#8b5cf6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#6366f1;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  
+  <!-- Decorative elements -->
+  <circle cx="100" cy="100" r="50" fill="#6366f1" opacity="0.1"/>
+  <circle cx="1100" cy="530" r="80" fill="#8b5cf6" opacity="0.1"/>
+  <circle cx="1000" cy="150" r="30" fill="#6366f1" opacity="0.2"/>
+  
+  <!-- Main content -->
+  <g font-family="Inter, system-ui, sans-serif">
+    <!-- Name -->
+    <text x="100" y="200" font-size="64" font-weight="700" fill="white">
+      Yonas Alem
+    </text>
+    
+    <!-- Title -->
+    <text x="100" y="260" font-size="32" font-weight="500" fill="#9ca3af">
+      Senior Software Engineer
+    </text>
+    
+    <!-- Key achievements -->
+    <text x="100" y="320" font-size="24" font-weight="600" fill="url(#text)">
+      40% API Performance Improvement
+    </text>
+    <text x="100" y="360" font-size="24" font-weight="600" fill="url(#text)">
+      $22K+ Monthly Cloud Savings
+    </text>
+    <text x="100" y="400" font-size="24" font-weight="600" fill="url(#text)">
+      5+ Years Full-Stack Experience
+    </text>
+    
+    <!-- Technologies -->
+    <text x="100" y="480" font-size="18" font-weight="500" fill="#6b7280">
+      React • Node.js • TypeScript • AWS • Docker • Microservices
+    </text>
+    
+    <!-- Call to action -->
+    <text x="100" y="540" font-size="20" font-weight="600" fill="#10b981">
+      Available for Remote Opportunities
+    </text>
+  </g>
+  
+  <!-- Tech icons (simplified) -->
+  <g fill="#6366f1" opacity="0.8">
+    <rect x="900" y="200" width="60" height="60" rx="8"/>
+    <rect x="980" y="200" width="60" height="60" rx="8"/>
+    <rect x="1060" y="200" width="60" height="60" rx="8"/>
+    <rect x="900" y="280" width="60" height="60" rx="8"/>
+    <rect x="980" y="280" width="60" height="60" rx="8"/>
+    <rect x="1060" y="280" width="60" height="60" rx="8"/>
+  </g>
+</svg>

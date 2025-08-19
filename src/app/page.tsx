@@ -12,6 +12,7 @@ import Endorsements from './components/Endorsements';
 import ScrollProgress from './components/ScrollProgress';
 import HowIWork from './components/HowIWork';
 import CaseStudies from './components/CaseStudies';
+import Blog from './components/Blog';
 
 export default function Home() {
   return (
@@ -31,6 +32,7 @@ export default function Home() {
         <CaseStudies />
       </div>
       <Projects />
+      <Blog />
       <Contact />
       <Footer />
       <BottomNav />
