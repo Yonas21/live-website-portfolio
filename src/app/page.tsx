@@ -13,6 +13,7 @@ import ScrollProgress from './components/ScrollProgress';
 import HowIWork from './components/HowIWork';
 import CaseStudies from './components/CaseStudies';
 import Blog from './components/Blog';
+import BackToTop from './components/BackToTop';
 
 export default function Home() {
   return (
@@ -36,6 +37,7 @@ export default function Home() {
       <Contact />
       <Footer />
       <BottomNav />
+      <BackToTop />
     </main>
   );
 }

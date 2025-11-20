@@ -73,7 +73,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/og-image.svg",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "Yonas Alem - Senior Software Engineer",
@@ -85,7 +85,7 @@ export const metadata: Metadata = {
     title: "Yonas Alem – Senior Software Engineer",
     description:
       "Full‑stack engineer focused on performance, reliability and business impact. 40% API improvement, $22K+ cloud savings.",
-    images: ["/og-image.svg"],
+    images: ["/og-image.png"],
   },
   icons: {
     icon: [{ url: "/icon.svg" }],
