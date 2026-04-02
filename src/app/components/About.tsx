@@ -1,47 +1,42 @@
-"use client";
-import React from 'react';
-import { motion } from 'framer-motion';
+import { skillGroups } from '../content';
 
-const About = () => {
-  const skills = [
-    'TypeScript', 'JavaScript', 'Python', 'Go', 'PHP', 'SQL',
-    'React.js', 'Next.js', 'Vue.js', 'Node.js', 'Express.js', 'FastAPI', 'Django',
-    'AWS', 'GCP', 'Azure', 'Docker', 'Kubernetes'
-  ];
-
+export default function About() {
   return (
-    <section id="about" className="bg-neutral-50 text-neutral-900 dark:bg-neutral-950 dark:text-white py-20 sm:py-24 scroll-mt-24">
-      <div className="container mx-auto px-4">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-16">About Me</h2>
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-6 md:gap-8 items-start">
-            <motion.div className="md:col-span-2 bg-white dark:bg-neutral-900 p-6 md:p-8 rounded-xl border border-neutral-200 dark:border-neutral-800 shadow-soft hover:shadow-medium transition-shadow" initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.5 }}>
-              <h3 className="text-2xl font-semibold mb-5 text-primary-600 dark:text-primary-400">Summary</h3>
-              <p className="text-neutral-600 dark:text-neutral-400 leading-relaxed mb-4">
-                Results‑driven Senior Software Engineer with 5+ years building enterprise systems for fintech, gaming and government. Specialized in full‑stack development, microservices and cloud infrastructure with a strong focus on performance and cost efficiency.
+    <section id="about" className="section-frame">
+      <div className="mx-auto max-w-6xl px-4">
+        <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
+          <div>
+            <p className="eyebrow">About</p>
+            <h2 className="mt-4 max-w-xl text-3xl font-semibold tracking-tight sm:text-4xl md:text-[2.75rem]">Engineering with operational awareness.</h2>
+            <div className="mt-6 space-y-5 text-[15px] leading-8 text-neutral-700 dark:text-neutral-400 md:text-base">
+              <p>
+                I am a full-stack engineer with 6+ years of experience across gaming, government, affiliate platforms, and internal product systems. Most of my strongest work sits at the intersection of backend reliability, API performance, and product delivery.
               </p>
-              <ul className="text-neutral-600 dark:text-neutral-400 space-y-2 list-disc list-inside">
-                <li>40% API performance improvement through caching and query tuning</li>
-                <li>$22K+ monthly cloud savings via architecture optimization</li>
-                <li>35% throughput increase by migrating to gRPC microservices</li>
-                <li>Led and mentored 4+ engineers in agile environments</li>
-              </ul>
-            </motion.div>
-            <motion.div className="md:col-span-3 bg-white dark:bg-neutral-900 p-6 md:p-8 rounded-xl border border-neutral-200 dark:border-neutral-800 shadow-soft hover:shadow-medium transition-shadow" initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.2 }} transition={{ duration: 0.5, delay: 0.08 }}>
-              <h3 className="text-2xl font-semibold mb-6 text-primary-600 dark:text-primary-400">Core Technical Skills</h3>
-              <div className="flex flex-wrap gap-2.5 md:gap-3">
-                {skills.map((skill, index) => (
-                  <motion.span key={index} className="bg-neutral-100 text-neutral-700 dark:bg-neutral-800 dark:text-neutral-300 text-xs md:text-sm font-medium px-3 py-1.5 md:px-4 md:py-2 rounded-lg border border-neutral-200 dark:border-neutral-700 hover:border-primary-400 dark:hover:border-primary-600 transition-colors" whileHover={{ scale: 1.05 }}>
-                    {skill}
-                  </motion.span>
-                ))}
-              </div>
-            </motion.div>
+              <p>
+                I am most useful when a team has a real bottleneck to solve: a slow system, a fragile release process, a repetitive workflow, or a product surface that needs to become clearer and easier to maintain.
+              </p>
+            </div>
+          </div>
+
+          <div className="grid gap-6">
+            {skillGroups.map((group) => (
+              <section key={group.title} className="surface-card p-6">
+                <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-neutral-500 dark:text-neutral-500">{group.title}</h3>
+                <div className="mt-5 flex flex-wrap gap-2.5">
+                  {group.items.map((item) => (
+                    <span
+                      key={item}
+                      className="surface-muted rounded-md px-3 py-2 text-sm text-neutral-700 dark:text-neutral-200"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </section>
+            ))}
           </div>
         </div>
       </div>
     </section>
   );
-};
-
-export default About;
+}

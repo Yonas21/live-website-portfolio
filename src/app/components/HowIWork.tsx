@@ -1,26 +1,20 @@
-"use client";
-import React from 'react';
-import { FiTarget, FiCpu, FiShield, FiTrendingDown } from 'react-icons/fi';
-
-const items = [
-  { icon: <FiTarget />, title: 'Outcome-first', text: 'Drive measurable KPIs: latency, cost, reliability.' },
-  { icon: <FiCpu />, title: 'Pragmatic engineering', text: 'Bias to simple, observable, testable solutions.' },
-  { icon: <FiShield />, title: 'Reliability', text: 'SLOs, error budgets, robust rollouts and on-call hygiene.' },
-  { icon: <FiTrendingDown />, title: 'Cost awareness', text: 'Track unit economics and reduce waste continuously.' },
-];
+import { principles } from '../content';
 
 export default function HowIWork() {
   return (
-    <section id="how-i-work" className="bg-white text-gray-900 dark:bg-gray-950 dark:text-white py-16 scroll-mt-24">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-12">How I Work</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-6xl mx-auto">
-          {items.map((it, i) => (
-            <div key={i} className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 p-5 shadow-sm hover:shadow-md transition-shadow">
-              <div className="text-brand-500 text-2xl mb-3">{it.icon}</div>
-              <div className="font-semibold mb-1">{it.title}</div>
-              <div className="text-sm text-gray-600 dark:text-gray-400">{it.text}</div>
-            </div>
+    <section id="approach" className="section-frame">
+      <div className="mx-auto max-w-6xl px-4">
+        <div className="mb-12">
+          <p className="eyebrow">Approach</p>
+          <h2 className="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl md:text-[2.45rem]">What I optimize for.</h2>
+        </div>
+
+        <div className="grid gap-6 md:grid-cols-3">
+          {principles.map((item) => (
+            <article key={item.title} className="surface-card p-6">
+              <h3 className="text-lg font-semibold text-neutral-950 dark:text-white">{item.title}</h3>
+              <p className="mt-4 text-sm leading-7 text-neutral-600 dark:text-neutral-400">{item.text}</p>
+            </article>
           ))}
         </div>
       </div>

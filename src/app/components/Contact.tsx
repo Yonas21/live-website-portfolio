@@ -1,169 +1,64 @@
-import React from 'react';
-import { FiMail, FiLinkedin, FiGithub, FiCalendar, FiMessageCircle, FiMapPin } from 'react-icons/fi';
+import { FiGithub, FiLinkedin, FiMail, FiMapPin } from 'react-icons/fi';
+import { profile } from '../content';
 
-const Contact = () => {
+export default function Contact() {
   return (
-		<section
-			id="contact"
-			className="bg-white text-gray-900 dark:bg-gray-950 dark:text-white py-20 sm:py-24 scroll-mt-24"
-		>
-			<div className="container mx-auto px-4">
-				<div className="max-w-4xl mx-auto">
-					<div className="text-center mb-16">
-						<h2 className="text-3xl sm:text-4xl font-bold mb-4">
-							Let's Work Together
-						</h2>
-						<p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-							I'm open to remote opportunities worldwide. Whether
-							you have a project in mind or just want to chat
-							about technology, I'd love to hear from you.
-						</p>
-					</div>
+    <section id="contact" className="border-t border-white/10 bg-[linear-gradient(to_bottom,#121821_0%,#0d1117_100%)] py-20 text-white sm:py-24">
+      <div className="mx-auto max-w-6xl px-4">
+        <div className="grid gap-10 rounded-3xl border border-white/10 bg-[rgba(255,255,255,0.04)] p-8 shadow-[0_20px_60px_rgba(0,0,0,0.28)] md:grid-cols-[1fr_auto] md:items-end md:p-10">
+          <div>
+            <p className="text-sm font-medium uppercase tracking-[0.18em] text-neutral-400">Contact</p>
+            <h2 className="mt-4 max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl md:text-[2.7rem]">
+              If you need a senior engineer who can improve a system without turning it into theater, let’s talk.
+            </h2>
+            <p className="mt-6 max-w-2xl text-[15px] leading-8 text-neutral-300 md:text-base">
+              I am open to remote roles where reliability, product clarity, and engineering judgment matter. The best conversations usually start with a real system problem, not a buzzword list.
+            </p>
+          </div>
 
-					<div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-						{/* Contact Info */}
-						<div className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 p-8 shadow-sm">
-							<h3 className="text-xl font-semibold mb-6 text-brand-300">
-								Get in Touch
-							</h3>
-							<div className="space-y-4">
-								<div className="flex items-center gap-3">
-									<div className="w-10 h-10 bg-brand-100 dark:bg-brand-900/20 rounded-lg flex items-center justify-center">
-										<FiMail
-											className="text-brand-600"
-											size={20}
-										/>
-									</div>
-									<div>
-										<p className="font-medium">Email</p>
-										<a
-											href="mailto:yonalem21@gmail.com"
-											className="text-brand-600 hover:text-brand-500 transition-colors"
-										>
-											yonalem21@gmail.com
-										</a>
-									</div>
-								</div>
+          <div className="flex flex-col gap-3">
+            <a
+              href={`mailto:${profile.email}`}
+              className="inline-flex items-center justify-center gap-2 rounded-md bg-neutral-100 px-5 py-3 text-sm font-medium text-neutral-950 transition-colors hover:bg-white"
+            >
+              <FiMail size={16} />
+              {profile.email}
+            </a>
+            <a
+              href={profile.resumePath}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center rounded-md border border-white/12 px-5 py-3 text-sm font-medium text-neutral-100 transition-colors hover:bg-white/[0.05]"
+            >
+              Open resume
+            </a>
+          </div>
+        </div>
 
-								<div className="flex items-center gap-3">
-									<div className="w-10 h-10 bg-brand-100 dark:bg-brand-900/20 rounded-lg flex items-center justify-center">
-										<FiMapPin
-											className="text-brand-600"
-											size={20}
-										/>
-									</div>
-									<div>
-										<p className="font-medium">Location</p>
-										<p className="text-gray-600 dark:text-gray-400">
-											Addis Ababa, Ethiopia
-										</p>
-									</div>
-								</div>
-
-								<div className="flex items-center gap-3">
-									<div className="w-10 h-10 bg-brand-100 dark:bg-brand-900/20 rounded-lg flex items-center justify-center">
-										<FiMessageCircle
-											className="text-brand-600"
-											size={20}
-										/>
-									</div>
-									<div>
-										<p className="font-medium">Languages</p>
-										<p className="text-gray-600 dark:text-gray-400">
-											English, Amharic, Tigrinya
-										</p>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						{/* Quick Actions */}
-						<div className="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-800 p-8 shadow-sm">
-							<h3 className="text-xl font-semibold mb-6 text-brand-300">
-								Quick Actions
-							</h3>
-							<div className="space-y-4">
-								<a
-									href="mailto:yonalem21@gmail.com?subject=Let's discuss a project"
-									className="flex items-center gap-3 w-full p-4 bg-brand-600 hover:bg-brand-500 text-white rounded-lg transition-colors shadow-sm"
-								>
-									<FiMail size={20} />
-									<span className="font-medium">
-										Send me an email
-									</span>
-								</a>
-
-								<a
-									href="https://calendly.com/yonalem21"
-									target="_blank"
-									rel="noopener noreferrer"
-									className="flex items-center gap-3 w-full p-4 bg-white hover:bg-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700 rounded-lg transition-colors"
-								>
-									<FiCalendar size={20} />
-									<span className="font-medium">
-										Schedule a call
-									</span>
-								</a>
-
-								<a
-									href="/Yonas_Alem_Resume.pdf"
-									target="_blank"
-									rel="noopener noreferrer"
-									className="flex items-center gap-3 w-full p-4 bg-white hover:bg-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700 rounded-lg transition-colors"
-								>
-									<FiMessageCircle size={20} />
-									<span className="font-medium">
-										Download Resume
-									</span>
-								</a>
-							</div>
-						</div>
-					</div>
-
-					{/* Social Links */}
-					<div className="text-center">
-						<h3 className="text-lg font-semibold mb-6">
-							Connect with me
-						</h3>
-						<div className="flex justify-center items-center gap-6">
-							<a
-								href="https://www.linkedin.com/in/yonasalem21"
-								target="_blank"
-								rel="noopener noreferrer"
-								className="flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white rounded-lg transition-colors shadow-sm"
-							>
-								<FiLinkedin size={20} />
-								<span>LinkedIn</span>
-							</a>
-							<a
-								href="https://github.com/Yonas21"
-								target="_blank"
-								rel="noopener noreferrer"
-								className="flex items-center gap-2 px-6 py-3 bg-gray-900 hover:bg-gray-800 dark:bg-gray-800 dark:hover:bg-gray-700 text-white rounded-lg transition-colors shadow-sm"
-							>
-								<FiGithub size={20} />
-								<span>GitHub</span>
-							</a>
-						</div>
-					</div>
-
-					{/* Availability Status */}
-					<div className="mt-12 text-center">
-						<div className="inline-flex items-center gap-2 bg-emerald-50 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-300 px-4 py-2 rounded-full">
-							<div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
-							<span className="text-sm font-medium">
-								Available for new opportunities
-							</span>
-						</div>
-						<p className="mt-4 text-sm text-gray-600 dark:text-gray-400">
-							I'm currently open to full-time remote positions and
-							interesting freelance projects.
-						</p>
-					</div>
-				</div>
-			</div>
-		</section>
+        <div className="mt-8 grid gap-4 md:grid-cols-3">
+          <div className="rounded-2xl border border-white/10 bg-white/[0.025] p-5 backdrop-blur-sm">
+            <div className="flex items-center gap-2 text-sm font-medium text-white">
+              <FiMapPin size={16} />
+              Location
+            </div>
+            <p className="mt-3 text-sm text-neutral-300">{profile.location}</p>
+          </div>
+          <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" className="rounded-2xl border border-white/10 bg-white/[0.025] p-5 backdrop-blur-sm transition-colors hover:bg-white/[0.05]">
+            <div className="flex items-center gap-2 text-sm font-medium text-white">
+              <FiLinkedin size={16} />
+              LinkedIn
+            </div>
+            <p className="mt-3 text-sm text-neutral-300">linkedin.com/in/yonasalem21</p>
+          </a>
+          <a href={profile.github} target="_blank" rel="noopener noreferrer" className="rounded-2xl border border-white/10 bg-white/[0.025] p-5 backdrop-blur-sm transition-colors hover:bg-white/[0.05]">
+            <div className="flex items-center gap-2 text-sm font-medium text-white">
+              <FiGithub size={16} />
+              GitHub
+            </div>
+            <p className="mt-3 text-sm text-neutral-300">github.com/Yonas21</p>
+          </a>
+        </div>
+      </div>
+    </section>
   );
-};
-
-export default Contact;
+}
