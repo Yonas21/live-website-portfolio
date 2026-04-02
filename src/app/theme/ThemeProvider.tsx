@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React, { createContext, useContext, useEffect, useMemo, useState } from 'react';
 
 type Theme = 'light' | 'dark';
@@ -11,32 +11,40 @@ type ThemeContextValue = {
 
 const ThemeContext = createContext<ThemeContextValue | undefined>(undefined);
 
+function readInitialTheme(): Theme {
+  if (typeof document !== 'undefined') {
+    return document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+  }
+  return 'light';
+}
+
 export default function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setThemeState] = useState<Theme>('dark');
+  const [theme, setThemeState] = useState<Theme>(readInitialTheme);
 
   useEffect(() => {
-    const saved = (typeof window !== 'undefined' && localStorage.getItem('theme')) as Theme | null;
-    const prefersDark = typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const initial = saved ?? (prefersDark ? 'dark' : 'dark');
-    setThemeState(initial);
+    const saved = window.localStorage.getItem('theme') as Theme | null;
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const resolvedTheme = saved === 'light' || saved === 'dark' ? saved : prefersDark ? 'dark' : 'light';
+    setThemeState(resolvedTheme);
   }, []);
 
   useEffect(() => {
     const root = document.documentElement;
-    const isDark = theme === 'dark';
-    root.classList.toggle('dark', isDark);
-    localStorage.setItem('theme', theme);
+    root.classList.toggle('dark', theme === 'dark');
+    root.style.colorScheme = theme;
+    window.localStorage.setItem('theme', theme);
   }, [theme]);
 
-  const value = useMemo<ThemeContextValue>(() => ({
-    theme,
-    toggle: () => setThemeState((t) => (t === 'dark' ? 'light' : 'dark')),
-    setTheme: (t: Theme) => setThemeState(t),
-  }), [theme]);
-
-  return (
-    <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
+  const value = useMemo<ThemeContextValue>(
+    () => ({
+      theme,
+      toggle: () => setThemeState((current) => (current === 'dark' ? 'light' : 'dark')),
+      setTheme: (nextTheme: Theme) => setThemeState(nextTheme),
+    }),
+    [theme]
   );
+
+  return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>;
 }
 
 export function useTheme() {
