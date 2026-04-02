@@ -5,14 +5,10 @@ import Metrics from './components/Metrics';
 import Hero from './components/Hero';
 import Navbar from './components/Navbar';
 import BottomNav from './components/BottomNav';
-import Projects from './components/Projects';
 import Footer from './components/Footer';
-import Logos from './components/Logos';
-import Endorsements from './components/Endorsements';
 import ScrollProgress from './components/ScrollProgress';
 import HowIWork from './components/HowIWork';
 import CaseStudies from './components/CaseStudies';
-import Blog from './components/Blog';
 import BackToTop from './components/BackToTop';
 
 export default function Home() {
@@ -23,17 +19,9 @@ export default function Home() {
       <Hero />
       <About />
       <Metrics />
-      <Logos />
       <Experience />
-      <Endorsements />
-      <div id="how-i-work">
-        <HowIWork />
-      </div>
-      <div id="case-studies">
-        <CaseStudies />
-      </div>
-      <Projects />
-      <Blog />
+      <CaseStudies />
+      <HowIWork />
       <Contact />
       <Footer />
       <BottomNav />
